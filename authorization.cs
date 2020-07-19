@@ -11,17 +11,15 @@ using MySql.Data.MySqlClient;
 
 namespace RegistrationSystem
 {
-    public partial class authorization : Form
+    public partial class Authorization : Form
     {
-        public authorization()
+        public Authorization()
         {
             InitializeComponent();
+
             StartPosition = FormStartPosition.CenterScreen;
             this.passwordText.AutoSize = false;
             this.passwordText.Size = new Size(392, 33);
-
-
-            
         }
 
 
@@ -29,7 +27,7 @@ namespace RegistrationSystem
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            registration Registration = new registration();
+            Registration Registration = new Registration();
             Registration.Show();
         }
 
@@ -93,7 +91,6 @@ namespace RegistrationSystem
 
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-
             MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @login and Role = 1", db.getConnection());
             command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginUser;
             adapter.SelectCommand = command;

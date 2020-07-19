@@ -1,6 +1,6 @@
 ﻿namespace RegistrationSystem
 {
-    partial class authorization
+    partial class Authorization
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(authorization));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authorization));
             this.button = new System.Windows.Forms.Button();
             this.passwordText = new System.Windows.Forms.TextBox();
             this.loginText = new System.Windows.Forms.TextBox();

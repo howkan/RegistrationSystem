@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace RegistrationSystem
 {
-    public partial class registration : Form
+    public partial class Registration : Form
     {
-        public registration()
+        public Registration()
         {
             InitializeComponent();
             this.passwordText.AutoSize = false;
@@ -28,7 +28,7 @@ namespace RegistrationSystem
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            authorization authorization = new authorization();
+            Authorization authorization = new Authorization();
             authorization.Show();
         }
 
@@ -57,7 +57,7 @@ namespace RegistrationSystem
                                     if (command.ExecuteNonQuery() == 1)
                                     {
                                         this.Hide();
-                                        authorization authorization = new authorization();
+                                        Authorization authorization = new Authorization();
                                         authorization.Show();
                                     }
                                     else

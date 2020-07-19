@@ -16,13 +16,15 @@ namespace RegistrationSystem
     {
         private MySqlDataAdapter adapter = null;
         private DataTable table = null;
+
         ToolStripLabel dateLabel;
         ToolStripLabel timeLabel;
         ToolStripLabel infoLabel;
+       
         Timer timer;
-
         Find find;
         Offer offer;
+
         public MainForm(string login)
         {
 
@@ -35,24 +37,40 @@ namespace RegistrationSystem
             dateLabel = new ToolStripLabel();
             timeLabel = new ToolStripLabel();
 
+            Status();
+
+            TimerOne();
+            TimerTwo();
+
+            Configure();
+        }
+
+        private void Configure()
+        {
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void Status()
+        {
             statusStrip1.Items.Add(infoLabel);
             statusStrip1.Items.Add(dateLabel);
             statusStrip1.Items.Add(timeLabel);
+        }
 
-            timer = new Timer() { Interval = 1000 };
-            timer.Tick += timer1_Tick;
-            timer.Start();
-
-            StartPosition = FormStartPosition.CenterScreen;
-
+        private void TimerTwo()
+        {
             timer2 = new Timer() { Interval = 10000 };
             timer2.Tick += new EventHandler(timer2_Tick);
             timer2.Start();
-
-
         }
- 
-      
+
+        private void TimerOne()
+        {
+            timer = new Timer() { Interval = 1000 };
+            timer.Tick += timer1_Tick;
+            timer.Start();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             DB dB = new DB();
@@ -98,12 +116,10 @@ namespace RegistrationSystem
             timeLabel.Text = DateTime.Now.ToLongTimeString();
         }
 
-   
-
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            authorization authorization = new authorization();
+            Authorization authorization = new Authorization();
             authorization.ShowDialog();
             
         }

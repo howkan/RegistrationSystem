@@ -111,7 +111,8 @@ namespace RegistrationSystem
 
         private void DeleteToolStripButton2_Click(object sender, EventArgs e)
         {
-            if (delete == null || delete.IsDisposed) { delete = new Delete(); delete.Show(); }
+            int id = 1;
+            if (delete == null || delete.IsDisposed) { delete = new Delete(id); delete.Show(); }
             else { delete.Show(); delete.Focus(); }
         }
 
@@ -159,7 +160,7 @@ namespace RegistrationSystem
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            authorization authorization = new authorization();
+            Authorization authorization = new Authorization();
             authorization.ShowDialog();
         }
 

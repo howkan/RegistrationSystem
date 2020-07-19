@@ -23,7 +23,7 @@ namespace RegistrationSystem
         
         
         AddUser addUser;
-        DeleteUsers delete;
+        Delete delete;
         FindUsers findUsers;
         public Users()
         {
@@ -32,20 +32,33 @@ namespace RegistrationSystem
             infoLabel.Text = "Текущие дата и время:";
             dateLabel = new ToolStripLabel();
             timeLabel = new ToolStripLabel();
+            
+            Status();
+      
+            TimerOne();
+            TimerTwo();
+            StartPosition = FormStartPosition.CenterScreen;
+        }
 
+        private void Status()
+        {
             statusStrip1.Items.Add(infoLabel);
             statusStrip1.Items.Add(dateLabel);
             statusStrip1.Items.Add(timeLabel);
+        }
 
-            timer = new Timer() { Interval = 1000 };
-            timer.Tick += timer1_Tick;
-            timer.Start();
-
-
-            StartPosition = FormStartPosition.CenterScreen;
+        private void TimerTwo()
+        {
             timer2 = new Timer() { Interval = 10000 };
             timer2.Tick += new EventHandler(timer2_Tick);
             timer2.Start();
+        }
+
+        private void TimerOne()
+        {
+            timer = new Timer() { Interval = 1000 };
+            timer.Tick += timer1_Tick;
+            timer.Start();
         }
 
         private void Users_Load(object sender, EventArgs e)
@@ -81,7 +94,8 @@ namespace RegistrationSystem
 
         private void DeleteToolStripButton2_Click(object sender, EventArgs e)
         {
-            if (delete == null || delete.IsDisposed) { delete = new DeleteUsers(); delete.Show(); }
+            int id = 0;
+            if (delete == null || delete.IsDisposed) { delete = new Delete(id); delete.Show(); }
             else { delete.Show(); delete.Focus(); }
         }
 

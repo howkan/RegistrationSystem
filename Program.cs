@@ -20,7 +20,7 @@ namespace RegistrationSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Context = new ApplicationContext(new authorization());
+            Context = new ApplicationContext(new Authorization());
             Application.Run(Context);
         }
     }
