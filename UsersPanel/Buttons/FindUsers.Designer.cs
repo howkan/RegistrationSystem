@@ -36,7 +36,7 @@
             this.Loginbox = new System.Windows.Forms.TextBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.NameBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FindButton = new System.Windows.Forms.Button();
             this.IdBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -116,15 +116,15 @@
             this.NameBox.TabIndex = 21;
             this.NameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameBox_KeyPress);
             // 
-            // button1
+            // FindButton
             // 
-            this.button1.Location = new System.Drawing.Point(279, 300);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 42);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Найти";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.FindButton.Location = new System.Drawing.Point(279, 300);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(176, 42);
+            this.FindButton.TabIndex = 19;
+            this.FindButton.Text = "Найти";
+            this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
             // IdBox
             // 
@@ -184,7 +184,7 @@
             this.Controls.Add(this.Loginbox);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.NameBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FindButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(747, 445);
             this.MinimumSize = new System.Drawing.Size(747, 445);
@@ -203,7 +203,7 @@
         private System.Windows.Forms.TextBox Loginbox;
         private System.Windows.Forms.TextBox PasswordBox;
         private System.Windows.Forms.TextBox NameBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button FindButton;
         private System.Windows.Forms.TextBox IdBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;

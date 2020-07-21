@@ -13,29 +13,37 @@ namespace RegistrationSystem
 {
     public partial class Edit : Form
     {
-        public string query = "";
+        private string query = "";
+
         public Edit()
         {
             InitializeComponent();
-            Select_tab("SELECT id from incidents");
+            SelectTab("SELECT id from incidents");
+            Values();
+            Configure();
+        }
 
-            comboBox2.Items.Add("Category");
-            comboBox2.Items.Add("Country");
-            comboBox2.Items.Add("Address");
-            comboBox2.Items.Add("Date");
-            comboBox2.Items.Add("Affected");
-            comboBox2.Items.Add("Description");
-            comboBox2.SelectedItem = "Category";
-
+        private void Configure()
+        {
             StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void Values()
+        {
+            ComboBoxValue.Items.Add("Category");
+            ComboBoxValue.Items.Add("Country");
+            ComboBoxValue.Items.Add("Address");
+            ComboBoxValue.Items.Add("Date");
+            ComboBoxValue.Items.Add("Affected");
+            ComboBoxValue.Items.Add("Description");
+            ComboBoxValue.SelectedItem = "Category";
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            string primary = comboBox1.SelectedItem.ToString();
-
-            string name = comboBox2.SelectedItem.ToString();
-            string update_row = textBox1.Text;
+            string primary = ComboBoxId.SelectedItem.ToString();
+            string name = ComboBoxValue.SelectedItem.ToString();
+            string update_row = TextBoxNewValue.Text;
 
             query = "UPDATE incidents SET " + name + " = '" + update_row + "' where id = '" + primary + "'" ;
 
@@ -46,7 +54,7 @@ namespace RegistrationSystem
             this.Close();
             
         }
-        public void Select_tab(string query)
+        private void SelectTab(string query)
         {
             DB db = new DB();
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
@@ -56,15 +64,14 @@ namespace RegistrationSystem
             dataAdapter.Fill(ds, "incidents");
             for(int i = 0; i < ds.Tables["incidents"].Rows.Count; i++)
             {
-                comboBox1.Items.Add(ds.Tables["incidents"].Rows[i][0].ToString());
+                ComboBoxId.Items.Add(ds.Tables["incidents"].Rows[i][0].ToString());
 
             }
-            comboBox1.SelectedItem = ds.Tables["incidents"].Rows[0][0].ToString();
+            ComboBoxId.SelectedItem = ds.Tables["incidents"].Rows[0][0].ToString();
             
         }
-        
-       
-        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void ComboBoxId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar)) return;
             else

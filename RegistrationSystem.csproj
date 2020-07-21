@@ -51,53 +51,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddUser.cs">
+    <Compile Include="UsersPanel\Buttons\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
+    <Compile Include="UsersPanel\Buttons\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPanel.cs">
+    <Compile Include="AdminPanel\AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminPanel.Designer.cs">
+    <Compile Include="AdminPanel\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="Delete.cs">
+    <Compile Include="AdminPanel\Buttons\Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Delete.Designer.cs">
+    <Compile Include="AdminPanel\Buttons\Delete.Designer.cs">
       <DependentUpon>Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edit.cs">
+    <Compile Include="AdminPanel\Buttons\Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Edit.Designer.cs">
+    <Compile Include="AdminPanel\Buttons\Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Find.cs">
+    <Compile Include="MainForm\Buttons\Find.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Find.Designer.cs">
+    <Compile Include="MainForm\Buttons\Find.Designer.cs">
       <DependentUpon>Find.cs</DependentUpon>
     </Compile>
-    <Compile Include="FindUsers.cs">
+    <Compile Include="UsersPanel\Buttons\FindUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FindUsers.Designer.cs">
+    <Compile Include="UsersPanel\Buttons\FindUsers.Designer.cs">
       <DependentUpon>FindUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Offer.cs">
+    <Compile Include="MainForm\Buttons\Offer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Offer.Designer.cs">
+    <Compile Include="MainForm\Buttons\Offer.Designer.cs">
       <DependentUpon>Offer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -119,34 +119,34 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs">
+    <Compile Include="UsersPanel\Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Users.Designer.cs">
+    <Compile Include="UsersPanel\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddUser.resx">
+    <EmbeddedResource Include="UsersPanel\Buttons\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPanel.resx">
+    <EmbeddedResource Include="AdminPanel\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Delete.resx">
+    <EmbeddedResource Include="AdminPanel\Buttons\Delete.resx">
       <DependentUpon>Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edit.resx">
+    <EmbeddedResource Include="AdminPanel\Buttons\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Find.resx">
+    <EmbeddedResource Include="MainForm\Buttons\Find.resx">
       <DependentUpon>Find.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindUsers.resx">
+    <EmbeddedResource Include="UsersPanel\Buttons\FindUsers.resx">
       <DependentUpon>FindUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Offer.resx">
+    <EmbeddedResource Include="MainForm\Buttons\Offer.resx">
       <DependentUpon>Offer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -160,7 +160,7 @@
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Users.resx">
+    <EmbeddedResource Include="UsersPanel\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -177,13 +177,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\silver-2143730_1920.jpg" />
-    <None Include="Resources\MainFormFon.jpg" />
-    <Content Include="Resources\background_Offer.jpg" />
-    <None Include="Resources\background_Offer1.jpg" />
     <Content Include="Resources\ButtonAuthorization.jpg" />
     <Content Include="Resources\ButtonRegister.jpg" />
-    <None Include="Resources\chalkboard-517818_1920.jpg" />
+    <None Include="Resources\Background1920_1080.jpg" />
     <Content Include="Resources\FonAuthorization.png" />
     <Content Include="Resources\FonRegister.jpg" />
   </ItemGroup>

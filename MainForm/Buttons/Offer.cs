@@ -14,21 +14,23 @@ namespace RegistrationSystem
 {
     public partial class Offer : Form
     {
-
-       
         public Offer()
         {
             InitializeComponent();
+            Configure();
+
+        }
+
+        private void Configure()
+        {
             StartPosition = FormStartPosition.CenterScreen;
-            
         }
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonOffer_Click(object sender, EventArgs e)
         {
-           
-            
+
             try
             {
                 DB db = new DB();
@@ -45,7 +47,7 @@ namespace RegistrationSystem
                 db.openConnection();
 
 
-                if (checkTextBoxes())
+                if (CheckTextBoxes())
                 {
                     if (command.ExecuteNonQuery() == 1)
                     {
@@ -70,17 +72,22 @@ namespace RegistrationSystem
                 MessageBox.Show("Отсутствует подключение с базой данных");
             }
 
-
         }
-            public Boolean checkTextBoxes()
+
+        private void CategoryText_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.CategoryText.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        public Boolean CheckTextBoxes()
         {
             String category = CategoryText.Text;
             String country = CountryText.Text;
             String address = AdressText.Text;
-         
+
             String affected = AffectdsText.Text;
             String description = DescriptionsText.Text;
-            if (category == String.Empty || country == String.Empty || address == String.Empty || 
+            if (category == String.Empty || country == String.Empty || address == String.Empty ||
                 affected == String.Empty || description == String.Empty)
 
             {
@@ -91,12 +98,5 @@ namespace RegistrationSystem
                 return true;
             }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.CategoryText.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        
     }
 }

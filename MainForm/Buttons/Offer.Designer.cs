@@ -35,7 +35,7 @@
             this.AdressText = new System.Windows.Forms.TextBox();
             this.DescriptionsText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonOffer = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.AdressText);
             this.panel1.Controls.Add(this.DescriptionsText);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.ButtonOffer);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -125,16 +125,16 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Добавить запись";
             // 
-            // button1
+            // ButtonOffer
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(247, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 40);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ButtonOffer.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonOffer.Location = new System.Drawing.Point(247, 400);
+            this.ButtonOffer.Name = "ButtonOffer";
+            this.ButtonOffer.Size = new System.Drawing.Size(217, 40);
+            this.ButtonOffer.TabIndex = 10;
+            this.ButtonOffer.Text = "Добавить";
+            this.ButtonOffer.UseVisualStyleBackColor = false;
+            this.ButtonOffer.Click += new System.EventHandler(this.ButtonOffer_Click);
             // 
             // label5
             // 
@@ -225,7 +225,7 @@
             this.CategoryText.Name = "CategoryText";
             this.CategoryText.Size = new System.Drawing.Size(329, 28);
             this.CategoryText.TabIndex = 0;
-            this.CategoryText.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.CategoryText.SelectedIndexChanged += new System.EventHandler(this.CategoryText_SelectedIndexChanged);
             // 
             // Offer
             // 
@@ -258,7 +258,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonOffer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox AdressText;

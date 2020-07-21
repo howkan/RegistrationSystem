@@ -16,37 +16,31 @@ namespace RegistrationSystem
         public Authorization()
         {
             InitializeComponent();
+            Configure();
+        }
 
+
+
+
+        private void Configure()
+        {
             StartPosition = FormStartPosition.CenterScreen;
-            this.passwordText.AutoSize = false;
-            this.passwordText.Size = new Size(392, 33);
+            this.PasswordText.AutoSize = false;
+            this.PasswordText.Size = new Size(392, 33);
         }
 
-
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ComeButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Registration Registration = new Registration();
-            Registration.Show();
-        }
-
-
-
-        private void login_Click(object sender, EventArgs e)
-        {
-            String loginUser = loginText.Text;
-            String passwUser = passwordText.Text;
+            String loginUser = LoginText.Text;
+            String passwUser = PasswordText.Text;
 
             try
             {
                 DB db = new DB();
                 DataTable table = new DataTable();
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-
                 MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`= @uL AND `password` = @uP", db.getConnection());
+                
                 command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
                 command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwUser;
                 adapter.SelectCommand = command;
@@ -83,11 +77,12 @@ namespace RegistrationSystem
         }
 
 
-        public Boolean CheckRole()
+
+        private Boolean CheckRole()
         {
             DB db = new DB();
 
-            String loginUser = loginText.Text;
+            String loginUser = LoginText.Text;
 
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -106,12 +101,22 @@ namespace RegistrationSystem
             }
         }
 
-        private void passwordText_KeyUp(object sender, KeyEventArgs e)
+        
+       
+        private void Registration_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Registration Registration = new Registration();
+            Registration.Show();
+        }
+
+
+        private void PasswordText_KeyUp(object sender, KeyEventArgs e)
         {
 
             if (e.KeyCode == Keys.Enter)
             {
-                button.PerformClick();
+                ComeButton.PerformClick();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }

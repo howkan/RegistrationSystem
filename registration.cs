@@ -17,42 +17,54 @@ namespace RegistrationSystem
         public Registration()
         {
             InitializeComponent();
-            this.passwordText.AutoSize = false;
-            this.passwordText.Size = new Size(393, 33);
-            StartPosition = FormStartPosition.CenterScreen;
-            
+            Configure();
+
         }
 
 
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Configure()
         {
-            this.Hide();
-            Authorization authorization = new Authorization();
-            authorization.Show();
+            this.PasswordText.AutoSize = false;
+            this.PasswordText.Size = new Size(393, 33);
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void button_register_Click(object sender, EventArgs e)
+
+        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+        private void NameText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar)) return;
+            else
+                e.Handled = true;
+        }
+
+
+        private void RegistrationButton_Click(object sender, EventArgs e)
         {
             try
             {
                 DB db = new DB();
                 MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `login`, `password`, `name`) VALUES ( @login, @pass, @name)", db.getConnection());
                 command.Parameters.Add("@login", MySqlDbType.VarChar).Value = LoginText.Text;
-                command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passwordText.Text;
-                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = nameText.Text;
+                command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PasswordText.Text;
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = NameText.Text;
                 db.openConnection();
 
 
-                if (checkTextBoxes())
+                if (CheckTextBoxes())
                 {
-                    if (checkUserName())
+                    if (CheckUserName())
                     {
                         if (CheckPasswordLenght())
                         {
-                            if (passwordText.Text.Equals(passwordText2.Text))
+                            if (PasswordText.Text.Equals(PasswordText2.Text))
                             {
-                                if (!checkLogin())
+                                if (!CheckLogin())
                                 {
                                     if (command.ExecuteNonQuery() == 1)
                                     {
@@ -76,11 +88,13 @@ namespace RegistrationSystem
                             {
                                 MessageBox.Show("Пароль не совпадают");
                             }
-                        }else
+                        }
+                        else
                         {
                             MessageBox.Show("Пароли не должен превышать 10 символов");
                         };
-                    }else
+                    }
+                    else
                     {
                         MessageBox.Show("Имя должно содержать больше 2 букв");
                     }
@@ -99,8 +113,7 @@ namespace RegistrationSystem
         }
 
 
-
-        public Boolean checkLogin()
+        public Boolean CheckLogin()
         {
             DB db = new DB();
             String login = LoginText.Text;
@@ -124,9 +137,9 @@ namespace RegistrationSystem
         }
 
 
-        public Boolean checkUserName()
+        public Boolean CheckUserName()
         {
-            String name = nameText.Text;
+            String name = NameText.Text;
             if (name.Length <= 3)
             {
                 return false;
@@ -138,11 +151,11 @@ namespace RegistrationSystem
 
         }
 
-        public Boolean CheckPasswordLenght ()
+        public Boolean CheckPasswordLenght()
         {
-            String password = passwordText.Text;
+            String password = PasswordText.Text;
 
-            if ( password.Length > 10)
+            if (password.Length > 10)
             {
                 return false;
             }
@@ -153,11 +166,11 @@ namespace RegistrationSystem
         }
 
 
-        public Boolean checkTextBoxes()
+        public Boolean CheckTextBoxes()
         {
-            String name = nameText.Text;
+            String name = NameText.Text;
             String login = LoginText.Text;
-            String password = passwordText.Text;
+            String password = PasswordText.Text;
 
 
             if (name == String.Empty || login == String.Empty || password == String.Empty)
@@ -169,17 +182,11 @@ namespace RegistrationSystem
                 return true;
             }
         }
-
-        private void registration_FormClosing(object sender, FormClosingEventArgs e)
+        private void Authorization_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void nameText_KeyPress(object sender, KeyPressEventArgs e)
-        {
-                if (!Char.IsDigit(e.KeyChar)) return;
-                else
-                    e.Handled = true;
+            this.Hide();
+            Authorization authorization = new Authorization();
+            authorization.Show();
         }
     }
 }

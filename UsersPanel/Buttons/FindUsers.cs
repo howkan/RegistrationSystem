@@ -18,9 +18,15 @@ namespace RegistrationSystem
         public FindUsers()
         {
             InitializeComponent();
+            Configure();
+        }
+
+        private void Configure()
+        {
             StartPosition = FormStartPosition.CenterScreen;
         }
-        public void Select_tab(string query)
+
+        private void SelectTab(string query)
         {
             DB db = new DB();
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
@@ -34,24 +40,24 @@ namespace RegistrationSystem
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string login = "login", password = "password", name = "name", id = "id", Role = "Role";
-            Select_tab("Select * from users " +
-               "WHERE " + login + "  LIKE '" + Loginbox.Text + "%' " +
-               "AND " + id + " LIKE '" + IdBox.Text + "%'" +
-                "AND " + Role + " LIKE '" + RoleBox.Text + "%'" +
-               "AND " + password + " LIKE '" + PasswordBox.Text + "%'" +
-               "AND " + name + " LIKE '" + NameBox.Text + "%'");
-
-            
-        }
+        
 
         private void NameBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar)) return;
             else
                 e.Handled = true;
+        }
+
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            string login = "login", password = "password", name = "name", id = "id", Role = "Role";
+            SelectTab("Select * from users " +
+               "WHERE " + login + "  LIKE '" + Loginbox.Text + "%' " +
+               "AND " + id + " LIKE '" + IdBox.Text + "%'" +
+                "AND " + Role + " LIKE '" + RoleBox.Text + "%'" +
+               "AND " + password + " LIKE '" + PasswordBox.Text + "%'" +
+               "AND " + name + " LIKE '" + NameBox.Text + "%'");
         }
     }
 }

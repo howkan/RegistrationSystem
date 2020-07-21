@@ -32,10 +32,7 @@ namespace RegistrationSystem
 
             toolStripLabel1.Text = "Логин: " + login;
 
-            infoLabel = new ToolStripLabel();
-            infoLabel.Text = "Текущие дата и время:";
-            dateLabel = new ToolStripLabel();
-            timeLabel = new ToolStripLabel();
+            ToolStrips();
 
             Status();
 
@@ -45,9 +42,36 @@ namespace RegistrationSystem
             Configure();
         }
 
+        public MainForm()
+        {
+            InitializeComponent();
+
+
+            ToolStrips();
+
+            Status();
+
+            TimerOne();
+            TimerTwo();
+
+            Configure();
+        }
+
+        private void ToolStrips()
+        {
+            infoLabel = new ToolStripLabel();
+            dateLabel = new ToolStripLabel();
+            timeLabel = new ToolStripLabel();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
+
+
         private void Configure()
         {
             StartPosition = FormStartPosition.CenterScreen;
+            infoLabel.Text = "Текущие дата и время:";
+
         }
 
         private void Status()
@@ -60,16 +84,28 @@ namespace RegistrationSystem
         private void TimerTwo()
         {
             timer2 = new Timer() { Interval = 10000 };
-            timer2.Tick += new EventHandler(timer2_Tick);
+            timer2.Tick += new EventHandler(Timer2_Tick);
             timer2.Start();
         }
 
         private void TimerOne()
         {
             timer = new Timer() { Interval = 1000 };
-            timer.Tick += timer1_Tick;
+            timer.Tick += Timer1_Tick;
             timer.Start();
         }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            dateLabel.Text = DateTime.Now.ToLongDateString();
+            timeLabel.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            MainForm_Load(null, null);
+        }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -83,19 +119,14 @@ namespace RegistrationSystem
             
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void AddToolStrip_Click(object sender, EventArgs e)
         {
             if (offer == null || offer.IsDisposed) { offer = new Offer(); offer.Show(); }
             else { offer.Show(); offer.Focus(); }
-            
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void UpdateToolStrip_Click(object sender, EventArgs e)
         {
 
             table.Clear();
@@ -103,30 +134,18 @@ namespace RegistrationSystem
             dataGridView1.DataSource = table;
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void FindToolStrip_Click(object sender, EventArgs e)
         {
             if (find == null || find.IsDisposed) { find = new Find(); find.Show(); }
             else { find.Show(); find.Focus(); }
             Find.dataGridView1 = this.dataGridView1;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            dateLabel.Text = DateTime.Now.ToLongDateString();
-            timeLabel.Text = DateTime.Now.ToLongTimeString();
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        private void AuthorizationToolStrip_Click(object sender, EventArgs e)
         {
             this.Hide();
             Authorization authorization = new Authorization();
             authorization.ShowDialog();
-            
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            MainForm_Load(null, null);
         }
     }
 }

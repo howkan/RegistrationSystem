@@ -34,9 +34,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ComboBoxId = new System.Windows.Forms.ComboBox();
+            this.ComboBoxValue = new System.Windows.Forms.ComboBox();
+            this.TextBoxNewValue = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -94,33 +94,32 @@
             this.label8.TabIndex = 37;
             this.label8.Text = "Id";
             // 
-            // comboBox1
+            // ComboBoxId
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(287, 153);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 28);
-            this.comboBox1.TabIndex = 38;
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
+            this.ComboBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ComboBoxId.FormattingEnabled = true;
+            this.ComboBoxId.Location = new System.Drawing.Point(287, 153);
+            this.ComboBoxId.Name = "ComboBoxId";
+            this.ComboBoxId.Size = new System.Drawing.Size(279, 28);
+            this.ComboBoxId.TabIndex = 38;
             // 
-            // comboBox2
+            // ComboBoxValue
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(287, 236);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(279, 28);
-            this.comboBox2.TabIndex = 39;
+            this.ComboBoxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ComboBoxValue.FormattingEnabled = true;
+            this.ComboBoxValue.Location = new System.Drawing.Point(287, 236);
+            this.ComboBoxValue.Name = "ComboBoxValue";
+            this.ComboBoxValue.Size = new System.Drawing.Size(279, 28);
+            this.ComboBoxValue.TabIndex = 39;
             // 
-            // textBox1
+            // TextBoxNewValue
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(287, 315);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 27);
-            this.textBox1.TabIndex = 40;
+            this.TextBoxNewValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxNewValue.Location = new System.Drawing.Point(287, 315);
+            this.TextBoxNewValue.Multiline = true;
+            this.TextBoxNewValue.Name = "TextBoxNewValue";
+            this.TextBoxNewValue.Size = new System.Drawing.Size(279, 27);
+            this.TextBoxNewValue.TabIndex = 40;
             // 
             // Edit
             // 
@@ -129,9 +128,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(841, 536);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.TextBoxNewValue);
+            this.Controls.Add(this.ComboBoxValue);
+            this.Controls.Add(this.ComboBoxId);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -153,8 +152,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox ComboBoxId;
+        private System.Windows.Forms.ComboBox ComboBoxValue;
+        private System.Windows.Forms.TextBox TextBoxNewValue;
     }
 }

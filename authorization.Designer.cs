@@ -29,54 +29,54 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authorization));
-            this.button = new System.Windows.Forms.Button();
-            this.passwordText = new System.Windows.Forms.TextBox();
-            this.loginText = new System.Windows.Forms.TextBox();
+            this.ComeButton = new System.Windows.Forms.Button();
+            this.PasswordText = new System.Windows.Forms.TextBox();
+            this.LoginText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.Registration = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button
+            // ComeButton
             // 
-            this.button.BackColor = System.Drawing.Color.White;
-            this.button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button.BackgroundImage")));
-            this.button.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button.FlatAppearance.BorderSize = 0;
-            this.button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button.Location = new System.Drawing.Point(40, 291);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(393, 43);
-            this.button.TabIndex = 0;
-            this.button.Text = "Войти";
-            this.button.UseVisualStyleBackColor = false;
-            this.button.Click += new System.EventHandler(this.login_Click);
+            this.ComeButton.BackColor = System.Drawing.Color.White;
+            this.ComeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ComeButton.BackgroundImage")));
+            this.ComeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ComeButton.FlatAppearance.BorderSize = 0;
+            this.ComeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.ComeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.ComeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ComeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ComeButton.Location = new System.Drawing.Point(40, 291);
+            this.ComeButton.Name = "ComeButton";
+            this.ComeButton.Size = new System.Drawing.Size(393, 43);
+            this.ComeButton.TabIndex = 0;
+            this.ComeButton.Text = "Войти";
+            this.ComeButton.UseVisualStyleBackColor = false;
+            this.ComeButton.Click += new System.EventHandler(this.ComeButton_Click);
             // 
-            // passwordText
+            // PasswordText
             // 
-            this.passwordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordText.Location = new System.Drawing.Point(40, 211);
-            this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(393, 31);
-            this.passwordText.TabIndex = 9;
-            this.passwordText.UseSystemPasswordChar = true;
-            this.passwordText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.passwordText_KeyUp);
+            this.PasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordText.Location = new System.Drawing.Point(40, 211);
+            this.PasswordText.Name = "PasswordText";
+            this.PasswordText.Size = new System.Drawing.Size(393, 31);
+            this.PasswordText.TabIndex = 9;
+            this.PasswordText.UseSystemPasswordChar = true;
+            this.PasswordText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PasswordText_KeyUp);
             // 
-            // loginText
+            // LoginText
             // 
-            this.loginText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginText.Location = new System.Drawing.Point(40, 111);
-            this.loginText.Multiline = true;
-            this.loginText.Name = "loginText";
-            this.loginText.Size = new System.Drawing.Size(393, 33);
-            this.loginText.TabIndex = 2;
+            this.LoginText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginText.Location = new System.Drawing.Point(40, 111);
+            this.LoginText.Multiline = true;
+            this.LoginText.Name = "LoginText";
+            this.LoginText.Size = new System.Drawing.Size(393, 33);
+            this.LoginText.TabIndex = 2;
             // 
             // label1
             // 
@@ -96,11 +96,11 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.linkLabel2);
+            this.panel1.Controls.Add(this.Registration);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.loginText);
-            this.panel1.Controls.Add(this.passwordText);
-            this.panel1.Controls.Add(this.button);
+            this.panel1.Controls.Add(this.LoginText);
+            this.panel1.Controls.Add(this.PasswordText);
+            this.panel1.Controls.Add(this.ComeButton);
             this.panel1.Location = new System.Drawing.Point(203, 69);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(506, 443);
@@ -133,19 +133,19 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Нужна учетная запись?";
             // 
-            // linkLabel2
+            // Registration
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(195, 376);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(113, 13);
-            this.linkLabel2.TabIndex = 7;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Зарегистрироваться";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.Registration.AutoSize = true;
+            this.Registration.LinkColor = System.Drawing.Color.Black;
+            this.Registration.Location = new System.Drawing.Point(195, 376);
+            this.Registration.Name = "Registration";
+            this.Registration.Size = new System.Drawing.Size(113, 13);
+            this.Registration.TabIndex = 7;
+            this.Registration.TabStop = true;
+            this.Registration.Text = "Зарегистрироваться";
+            this.Registration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Registration_LinkClicked);
             // 
-            // authorization
+            // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +157,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(700, 500);
-            this.Name = "authorization";
+            this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Авторизация";
             this.panel1.ResumeLayout(false);
@@ -169,12 +169,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button;
-        private System.Windows.Forms.TextBox passwordText;
-        private System.Windows.Forms.TextBox loginText;
+        private System.Windows.Forms.Button ComeButton;
+        private System.Windows.Forms.TextBox PasswordText;
+        private System.Windows.Forms.TextBox LoginText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel Registration;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

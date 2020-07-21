@@ -36,7 +36,7 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddButon = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.panel1.Controls.Add(this.NameTextBox);
             this.panel1.Controls.Add(this.LoginTextBox);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.AddButon);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -128,15 +128,15 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Добавить пользователя";
             // 
-            // button1
+            // AddButon
             // 
-            this.button1.Location = new System.Drawing.Point(193, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 40);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddButon.Location = new System.Drawing.Point(193, 281);
+            this.AddButon.Name = "AddButon";
+            this.AddButon.Size = new System.Drawing.Size(217, 40);
+            this.AddButon.TabIndex = 10;
+            this.AddButon.Text = "Добавить";
+            this.AddButon.UseVisualStyleBackColor = true;
+            this.AddButon.Click += new System.EventHandler(this.AddButon_Click);
             // 
             // label3
             // 
@@ -197,7 +197,7 @@
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox LoginTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddButon;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

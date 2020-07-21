@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Find));
-            this.FindButtton = new System.Windows.Forms.Button();
+            this.FindButton = new System.Windows.Forms.Button();
             this.DescriptionText = new System.Windows.Forms.TextBox();
             this.CountryText = new System.Windows.Forms.TextBox();
             this.AffectedText = new System.Windows.Forms.TextBox();
@@ -45,15 +45,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // FindButtton
+            // FindButton
             // 
-            this.FindButtton.Location = new System.Drawing.Point(465, 376);
-            this.FindButtton.Name = "FindButtton";
-            this.FindButtton.Size = new System.Drawing.Size(176, 42);
-            this.FindButtton.TabIndex = 0;
-            this.FindButtton.Text = "Найти";
-            this.FindButtton.UseVisualStyleBackColor = true;
-            this.FindButtton.Click += new System.EventHandler(this.FindButtton_Click);
+            this.FindButton.Location = new System.Drawing.Point(465, 376);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(176, 42);
+            this.FindButton.TabIndex = 0;
+            this.FindButton.Text = "Найти";
+            this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
             // DescriptionText
             // 
@@ -63,7 +63,6 @@
             this.DescriptionText.Name = "DescriptionText";
             this.DescriptionText.Size = new System.Drawing.Size(294, 153);
             this.DescriptionText.TabIndex = 5;
-            this.DescriptionText.TextChanged += new System.EventHandler(this.DescriptionText_TextChanged);
             // 
             // CountryText
             // 
@@ -73,7 +72,6 @@
             this.CountryText.Name = "CountryText";
             this.CountryText.Size = new System.Drawing.Size(279, 31);
             this.CountryText.TabIndex = 6;
-            this.CountryText.TextChanged += new System.EventHandler(this.CountryText_TextChanged);
             // 
             // AffectedText
             // 
@@ -83,7 +81,6 @@
             this.AffectedText.Name = "AffectedText";
             this.AffectedText.Size = new System.Drawing.Size(279, 31);
             this.AffectedText.TabIndex = 9;
-            this.AffectedText.TextChanged += new System.EventHandler(this.AffectedText_TextChanged);
             // 
             // label1
             // 
@@ -96,7 +93,6 @@
             this.label1.Size = new System.Drawing.Size(105, 37);
             this.label1.TabIndex = 11;
             this.label1.Text = "Поиск";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -108,7 +104,6 @@
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "Город";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
@@ -120,7 +115,6 @@
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Пострадавшие";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // CategoryBox
             // 
@@ -138,7 +132,6 @@
             this.CategoryBox.Name = "CategoryBox";
             this.CategoryBox.Size = new System.Drawing.Size(279, 28);
             this.CategoryBox.TabIndex = 16;
-            this.CategoryBox.SelectedIndexChanged += new System.EventHandler(this.CategoryBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -150,7 +143,6 @@
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 17;
             this.label2.Text = "Категория";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label6
             // 
@@ -162,7 +154,6 @@
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 18;
             this.label6.Text = "Описание";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // AdressText
             // 
@@ -172,7 +163,6 @@
             this.AdressText.Name = "AdressText";
             this.AdressText.Size = new System.Drawing.Size(279, 31);
             this.AdressText.TabIndex = 19;
-            this.AdressText.TextChanged += new System.EventHandler(this.AdressText_TextChanged);
             // 
             // label7
             // 
@@ -184,7 +174,6 @@
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "Адрес";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // dateTimePicker1
             // 
@@ -226,7 +215,7 @@
             this.Controls.Add(this.AffectedText);
             this.Controls.Add(this.CountryText);
             this.Controls.Add(this.DescriptionText);
-            this.Controls.Add(this.FindButtton);
+            this.Controls.Add(this.FindButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(809, 532);
             this.MinimumSize = new System.Drawing.Size(809, 532);
@@ -239,7 +228,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button FindButtton;
+        private System.Windows.Forms.Button FindButton;
         private System.Windows.Forms.TextBox DescriptionText;
         private System.Windows.Forms.TextBox CountryText;
         private System.Windows.Forms.TextBox AffectedText;
